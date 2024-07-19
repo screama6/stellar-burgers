@@ -1,3 +1,4 @@
+import { UserRegisterBodyDto } from '@utils-types';
 import { Dispatch, SetStateAction, SyntheticEvent } from 'react';
 
 export type PageUIProps = {
