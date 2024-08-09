@@ -1,19 +1,19 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { RequestStatus } from './ingredientsSlice';
+import { RequestStatus } from '../ingredientsSlice/ingredientsSlice';
 import {
   checkUserAuth,
   loginUser,
   logoutUser,
   registerUser,
   updateUser
-} from '../thunk/user';
+} from '../../thunk/user';
 
 type User = {
   name: string;
   email: string;
 };
 
-type TUserState = {
+export type TUserState = {
   isAuthChecked: boolean;
   user: User | null;
   requestStatus: RequestStatus;
@@ -68,3 +68,5 @@ export const userActions = {
   loginUser
 };
 export const userSelectors = userSlice.selectors;
+
+export const userSliceReducer = userSlice.reducer;

@@ -6,7 +6,7 @@ import {
   UserResponse,
   UserResponseToken
 } from '@utils-types';
-import { userActions } from '../slices/userSlice';
+import { userActions } from '../slices/userSlice/userSlice';
 import { deleteCookie, setCookie } from '../../utils/cookie';
 import {
   getUserApi,
@@ -15,7 +15,7 @@ import {
   registerUserApi,
   TServerResponse,
   updateUserApi
-} from '@api';
+} from '../../utils/burger-api';
 import { useDispatch } from '../store';
 
 // создатель данных - payload creator () =>

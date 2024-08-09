@@ -1,12 +1,12 @@
 import { TOrder } from '@utils-types';
-import { RequestStatus } from './ingredientsSlice';
+import { RequestStatus } from '../ingredientsSlice/ingredientsSlice';
 import { createAsyncThunk, createSlice, PayloadAction } from '@reduxjs/toolkit';
-import { getOrdersApi } from '@api';
+import { getOrdersApi } from '../../../utils/burger-api';
 
-interface TOrdersState {
+export type TOrdersState = {
   orders: TOrder[];
   status: RequestStatus;
-}
+};
 
 const initialState: TOrdersState = {
   orders: [],
@@ -36,3 +36,5 @@ export const ordersSlice = createSlice({
       });
   }
 });
+
+export const ordersSliceReducer = ordersSlice.reducer;

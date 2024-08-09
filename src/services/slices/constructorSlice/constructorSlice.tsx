@@ -2,7 +2,7 @@ import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { TConstructorIngredient, TIngredient } from '@utils-types';
 import { v4 as uuid } from 'uuid';
 
-type TConstructorState = {
+export type TConstructorState = {
   bun: TConstructorIngredient | null;
   ingredients: TConstructorIngredient[];
 };
@@ -44,6 +44,7 @@ export const constructorSlice = createSlice({
   }
 });
 
+export const constructorSliceReducer = constructorSlice.reducer;
 export const addToConstructor = constructorSlice.actions.addToConstructor;
 export const removeFromConstructor =
   constructorSlice.actions.removeFromConstructor;

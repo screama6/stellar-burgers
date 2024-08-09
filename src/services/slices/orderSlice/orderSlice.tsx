@@ -1,8 +1,8 @@
-import { getOrderByNumberApi, orderBurgerApi } from '@api';
+import { getOrderByNumberApi, orderBurgerApi } from '../../../utils/burger-api';
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 import { TOrder } from '@utils-types';
-import { RequestStatus } from './ingredientsSlice';
-import { RootState } from '../store';
+import { RequestStatus } from '../ingredientsSlice/ingredientsSlice';
+import { RootState } from '../../store';
 
 export const getOrderByNumber = createAsyncThunk(
   'order/getOrderByNumber',
@@ -36,12 +36,12 @@ export type infoState = {
   name: string;
 };
 
-interface TOrderState {
+export type TOrderState = {
   info: infoState | null;
   isNewOrderLoading: boolean;
   isOrderByNumberLoading: boolean;
   ordersByNumber: TOrder | null;
-}
+};
 
 const initialState: TOrderState = {
   info: null,
@@ -84,3 +84,4 @@ export const orderSlice = createSlice({
 });
 
 export const orderActions = { ...orderSlice.actions };
+export const orderSliceReducer = orderSlice.reducer;
