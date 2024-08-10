@@ -1,12 +1,12 @@
 import { RequestStatus } from '../ingredientsSlice/ingredientsSlice';
-import { getOrders, ordersSliceReducer, TOrdersState } from './ordersSlice';
+import {
+  getOrders,
+  initialState,
+  ordersSliceReducer,
+  TOrdersState
+} from './ordersSlice';
 
 describe('ordersSlice', () => {
-  const initialState: TOrdersState = {
-    orders: [],
-    status: RequestStatus.Idle
-  };
-
   it('should set isLoading to true and reset error to null when pending is dispatched', () => {
     const actualState = ordersSliceReducer(
       { ...initialState },

@@ -1,16 +1,12 @@
 import {
   getIngredients,
   ingredientsReducer,
+  initialState,
   RequestStatus,
   TIngredientState
 } from './ingredientsSlice';
 
 describe('ingredientsSlice', () => {
-  const initialState: TIngredientState = {
-    data: [],
-    status: RequestStatus.Idle
-  };
-
   it('should set isLoading to true and reset error to null when pending is dispatched', () => {
     const actualState = ingredientsReducer(
       { ...initialState },

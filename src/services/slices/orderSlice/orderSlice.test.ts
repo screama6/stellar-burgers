@@ -1,18 +1,12 @@
 import {
   getOrderByNumber,
+  initialState,
   orderBurger,
   orderSliceReducer,
   TOrderState
 } from './orderSlice';
 
 describe('orderSlice', () => {
-  const initialState: TOrderState = {
-    info: null,
-    isNewOrderLoading: false,
-    isOrderByNumberLoading: false,
-    ordersByNumber: null
-  };
-
   it('should set isLoading to true and reset error to null when pending is dispatched', () => {
     const actualState = orderSliceReducer(
       { ...initialState },

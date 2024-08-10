@@ -5,15 +5,9 @@ import {
   updateUser
 } from '../../../services/thunk/user';
 import { RequestStatus } from '../ingredientsSlice/ingredientsSlice';
-import { TUserState, userSliceReducer } from './userSlice';
+import { initialState, TUserState, userSliceReducer } from './userSlice';
 
 describe('userSlice', () => {
-  const initialState: TUserState = {
-    isAuthChecked: false,
-    user: null,
-    requestStatus: RequestStatus.Idle
-  };
-
   it('should update state with ingredients data and set isLoading to false when fulfilled is dispatched', () => {
     const testData = {
       success: true,

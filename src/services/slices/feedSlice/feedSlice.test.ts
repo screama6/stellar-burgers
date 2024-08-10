@@ -1,14 +1,12 @@
 import { RequestStatus } from '../ingredientsSlice/ingredientsSlice';
-import { feedSliceReducer, getFeed, TFeedState } from './feedSlice';
+import {
+  feedSliceReducer,
+  getFeed,
+  initialState,
+  TFeedState
+} from './feedSlice';
 
 describe('feedSlice', () => {
-  const initialState: TFeedState = {
-    orders: [],
-    total: 0,
-    totalToday: 0,
-    status: RequestStatus.Idle
-  };
-
   it('should set isLoading to true and reset error to null when pending is dispatched', () => {
     const actualState = feedSliceReducer(
       { ...initialState },
