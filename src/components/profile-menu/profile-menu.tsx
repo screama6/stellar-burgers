@@ -4,7 +4,7 @@ import { ProfileMenuUI } from '@ui';
 import { useDispatch } from '../../services/store';
 import { logoutUser } from '../../services/thunk/user';
 import { deleteCookie } from '../../utils/cookie';
-import { userActions } from '../../services/slices/userSlice';
+import { userActions } from '../../services/slices/userSlice/userSlice';
 
 export const ProfileMenu: FC = () => {
   const { pathname } = useLocation();

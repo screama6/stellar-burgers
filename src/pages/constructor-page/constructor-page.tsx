@@ -9,7 +9,7 @@ import { FC } from 'react';
 import {
   RequestStatus,
   selectorIngredients
-} from '../../services/slices/ingredientsSlice';
+} from '../../services/slices/ingredientsSlice/ingredientsSlice';
 
 export const ConstructorPage: FC = () => {
   const { selectorIngredientsStatus } = selectorIngredients;
