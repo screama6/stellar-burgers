@@ -18,7 +18,8 @@ import {
   ResetPassword,
   Profile,
   ProfileOrders,
-  NotFound404
+  NotFound404,
+  MainPage
 } from '@pages';
 import { useEffect } from 'react';
 
@@ -55,7 +56,8 @@ export const App = () => {
     <div className={styles.app}>
       <AppHeader />
       <Routes location={backgroundLocation || location}>
-        <Route path='/' element={<ConstructorPage />} />
+        <Route path='/' element={<MainPage />} />
+        <Route path='/constructor' element={<ConstructorPage />} />
         <Route path='/feed' element={<Feed />} />
         <Route path='*' element={<NotFound404 />} />
         <Route
