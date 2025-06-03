@@ -13,7 +13,7 @@ export const MainPage: FC = () => (
         <div className={styles.container}>
           <>
             <Link to='/constructor' className={`pl-2 ${styles.link}`}>
-              <p className={styles.button}>Собрать свой бургер</p>
+              <button className={styles.button}>Собрать бургер</button>
             </Link>
           </>
           <img

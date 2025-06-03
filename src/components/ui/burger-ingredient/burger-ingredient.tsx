@@ -18,7 +18,7 @@ export const BurgerIngredientUI: FC<TBurgerIngredientUIProps> = memo(
       <li data-cy={_id} className={styles.container}>
         <Link
           className={styles.article}
-          to={`/ingredients/${_id}`}
+          to={`/constructor/ingredients/${_id}`}
           state={{ backgroundLocation: locationState }}
         >
           {count && <Counter count={count} />}
