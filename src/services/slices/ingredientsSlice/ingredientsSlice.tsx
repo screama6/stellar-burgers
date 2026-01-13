@@ -1,4 +1,4 @@
-import { getIngredientsApi } from '@api';
+import { getIngredientsApi } from '../../../utils/burger-api';
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 import { TIngredient } from '@utils-types';
 
@@ -9,12 +9,12 @@ export enum RequestStatus {
   Failed = 'Failed'
 }
 
-type TIngredientState = {
+export type TIngredientState = {
   data: TIngredient[];
   status: RequestStatus;
 };
 
-const initialState: TIngredientState = {
+export const initialState: TIngredientState = {
   data: [],
   status: RequestStatus.Idle
 };
@@ -48,3 +48,4 @@ export const ingredientsSlice = createSlice({
 });
 
 export const selectorIngredients = ingredientsSlice.selectors;
+export const ingredientsReducer = ingredientsSlice.reducer;

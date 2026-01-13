@@ -18,16 +18,17 @@ import {
   ResetPassword,
   Profile,
   ProfileOrders,
-  NotFound404
+  NotFound404,
+  MainPage
 } from '@pages';
 import { useEffect } from 'react';
 
-import { userActions } from '../../services/slices/userSlice';
+import { userActions } from '../../services/slices/userSlice/userSlice';
 import { useActionCreators } from '../../services/hooks';
-import { getIngredients } from '../../services/slices/ingredientsSlice';
+import { getIngredients } from '../../services/slices/ingredientsSlice/ingredientsSlice';
 import { useDispatch } from '../../services/store';
-import { getFeed } from '../../services/slices/feedSlice';
-import { getOrders } from '../../services/slices/ordersSlice';
+import { getFeed } from '../../services/slices/feedSlice/feedSlice';
+import { getOrders } from '../../services/slices/ordersSlice/ordersSlice';
 
 export const App = () => {
   const { authCheck, loginUser, registerUser, checkUserAuth } =
@@ -55,7 +56,8 @@ export const App = () => {
     <div className={styles.app}>
       <AppHeader />
       <Routes location={backgroundLocation || location}>
-        <Route path='/' element={<ConstructorPage />} />
+        <Route path='/' element={<MainPage />} />
+        <Route path='/constructor' element={<ConstructorPage />} />
         <Route path='/feed' element={<Feed />} />
         <Route path='*' element={<NotFound404 />} />
         <Route
@@ -114,7 +116,10 @@ export const App = () => {
             </ProtectedRoute>
           }
         />
-        <Route path='/ingredients/:id' element={<IngredientDetails />} />
+        <Route
+          path='/constructor/ingredients/:id'
+          element={<IngredientDetails />}
+        />
         <Route
           path='/profile/orders/:number'
           element={
@@ -137,9 +142,9 @@ export const App = () => {
             }
           />
           <Route
-            path='/ingredients/:id'
+            path='/constructor/ingredients/:id'
             element={
-              <Modal title='' onClose={onCloseModal}>
+              <Modal title='Детали ингредиента' onClose={onCloseModal}>
                 <IngredientDetails />
               </Modal>
             }

@@ -2,7 +2,7 @@ import { Preloader } from '@ui';
 import { FeedUI } from '@ui-pages';
 import { TOrder } from '@utils-types';
 import { FC } from 'react';
-import { getFeed } from '../../services/slices/feedSlice';
+import { getFeed } from '../../services/slices/feedSlice/feedSlice';
 import { RootState, useDispatch, useSelector } from '../../services/store';
 
 export const Feed: FC = () => {

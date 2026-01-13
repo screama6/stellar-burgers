@@ -6,11 +6,11 @@ import {
   infoState,
   orderActions,
   orderBurger
-} from '../../services/slices/orderSlice';
-import { userSelectors } from '../../services/slices/userSlice';
+} from '../../services/slices/orderSlice/orderSlice';
+import { userSelectors } from '../../services/slices/userSlice/userSlice';
 import { useNavigate } from 'react-router-dom';
-import { resetConstructor } from '../../services/slices/constructorSlice';
-import { getOrders } from '../../services/slices/ordersSlice';
+import { resetConstructor } from '../../services/slices/constructorSlice/constructorSlice';
+import { getOrders } from '../../services/slices/ordersSlice/ordersSlice';
 
 export const BurgerConstructor: FC = () => {
   /** TODO: взять переменные constructorItems, orderRequest и orderModalData из стора */

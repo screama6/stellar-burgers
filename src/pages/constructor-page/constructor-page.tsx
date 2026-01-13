@@ -9,7 +9,8 @@ import { FC } from 'react';
 import {
   RequestStatus,
   selectorIngredients
-} from '../../services/slices/ingredientsSlice';
+} from '../../services/slices/ingredientsSlice/ingredientsSlice';
+import { ReactNode } from 'react';
 
 export const ConstructorPage: FC = () => {
   const { selectorIngredientsStatus } = selectorIngredients;
